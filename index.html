@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#4f46e5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AICTSS MCQ">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="CA AICTSS Advanced ITT MCQ practice dashboard">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>CA AICTSS Advanced ITT — MCQ Practice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">CA</div><div><div class="brand-title">AICTSS • Advanced ITT</div><div class="brand-sub">MCQ Practice Dashboard</div></div></div>
+  <div class="top-actions"><button id="randomBtn" class="btn ghost">⚡ Random 50</button><button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☾</button></div>
+</header>
+<div class="mobile-bar"><button id="mobileMenuBtn" class="mobile-menu-btn">☰ <span>Menu</span></button><span id="mobileTitle">Chapters</span><button id="mobileHomeBtn" class="mobile-home-btn">⌂</button></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="side-section"><div class="side-label">Practice Mode</div><button class="side-btn active" data-mode="chapters">▦ <span>Chapters</span></button><button class="side-btn" data-mode="all">◉ <span>All Questions</span></button><button class="side-btn" data-mode="wrong">↻ <span>Wrong Answers</span><span id="wrongCount" class="pill">0</span></button></div>
+  <div class="side-section"><div class="side-label">Modules</div><div id="moduleNav"></div></div>
+  <div class="side-footer"><div class="mini-stat"><span>Questions</span><b id="totalStat">0</b></div><div class="mini-stat"><span>Attempted</span><b id="attemptedStat">0</b></div><div class="mini-stat"><span>Accuracy</span><b id="accuracyStat">—</b></div></div>
+</aside>
+<main class="main">
+<section id="homeView" class="view active">
+  <div class="hero"><div><div class="eyebrow">EXAM PRACTICE</div><h1>Master Advanced ITT<br><span>one MCQ at a time.</span></h1><p>Mobile-friendly practice from your uploaded study material. Answers are revealed only after you select an option.</p></div><div class="hero-card"><div class="hero-number" id="heroQuestions">0</div><div>MCQs loaded</div><div class="hero-small">Source-faithful question bank</div></div></div>
+  <div class="stats-grid"><div class="stat-card"><span>Attempted</span><strong id="homeAttempted">0</strong><small>across all chapters</small></div><div class="stat-card"><span>Correct</span><strong id="homeCorrect">0</strong><small>answers</small></div><div class="stat-card"><span>Accuracy</span><strong id="homeAccuracy">—</strong><small>overall</small></div><div class="stat-card"><span>Wrong</span><strong id="homeWrong">0</strong><small>for revision</small></div></div>
+  <div class="install-card" id="installCard"><div><b>📱 Use on Android & iPhone</b><span>Install this dashboard to your Home Screen for an app-like experience.</span></div><button id="installBtn" class="btn primary">Install</button></div>
+  <div class="section-head"><div><h2>Choose a chapter</h2><p>Select a chapter to begin focused practice.</p></div><div class="search-wrap"><input id="chapterSearch" placeholder="Search chapters…" autocomplete="off"></div></div>
+  <div id="chapterGrid" class="chapter-grid"></div>
+</section>
+<section id="quizView" class="view">
+  <div class="quiz-top"><button id="backHome" class="back">← Back</button><div class="crumbs" id="crumbs"></div><button id="restartBtn" class="btn ghost">↻ Restart</button></div>
+  <div class="quiz-progress"><div class="progress-meta"><span id="qProgress"></span><span id="qScore"></span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+  <div id="questionList" class="question-list"></div>
+  <div class="page-nav"><button id="prevPageBtn" class="btn ghost">← Previous 50</button><div id="pageInfo" class="page-info"></div><button id="nextPageBtn" class="btn primary">Next 50 →</button></div>
+  <div class="navigator"><div class="navigator-head"><b>Question Navigator</b><span id="navigatorSummary"></span></div><div id="questionDots" class="question-dots"></div></div>
+</section>
+</main></div></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>
